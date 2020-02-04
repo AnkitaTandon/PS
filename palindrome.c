@@ -4,6 +4,7 @@
 void main(){
     char s[10][10];
     int len,n,i,x,y;
+	int flag = 0;
 
     scanf("%d",&n);             // n is the number of words
 
@@ -21,16 +22,17 @@ void main(){
             else if(s[i][x]=='.' && s[i][y]=='.')
                 s[i][y]=s[i][x]='a';
             else if(s[i][x]!=s[i][y]){
-                s[i][0]=-1;  //error here
+				flag++; // set flag
                 break;        
             }
         }
     }
 
-    for(i=0;i<n;i++){
-        printf("\n%s",s[i]);
-    }
-
-
-
+	if(!flag){
+    	for(i=0;i<n;i++){
+			printf("\n%s",s[i]);
+    	}
+	}
+	else
+		printf("\n-1");
 }
