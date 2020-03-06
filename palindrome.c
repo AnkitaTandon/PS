@@ -33,6 +33,8 @@ void main(){
 			printf("\n%s",s[i]);
     	}
 	}
-	else
+	else{
 		printf("\n-1");
+		flag = 0;
+	}
 }
